@@ -5,6 +5,9 @@
 [Spring Guide](https://spring.io/guides/gs/serving-web-content/)  
 [Bootstrap](https://v3.bootcss.com/getting-started/)  
 [OkHttp](https://square.github.io/okhttp/)  
+[H2 database](https://www.h2database.com/html/main.html)  
+[Mybatis starter](https://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)  
+[How to initialize database](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-database-initialization)  
 
 ### Tools  
 [GIT](https://git-scm.com/)
