@@ -1,10 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>学习空间</title>
+    <title>发布问题</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/demo.css">
     <script src="js/bootstrap.js"></script>
 
 </head>
@@ -49,5 +50,38 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发布问题</h2>
+            <hr>
+            <form action="/publish" method="post">
+                <div class="form-group">
+                    <label for="title">问题标题（简明扼要）：</label>
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title" cols="5"
+                           placeholder="不超过25个字..."> <!--报错后可保留上次输入值-->
+                </div>
+                <div class="form-group">
+                    <label for="content">问题补充（必填）：</label>
+                    <textarea class="form-control" th:text="${content}" id="content" name="content" rows="30"
+                              cols="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tag">添加标签：</label>
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" cols="3"
+                           placeholder="输入标签，逗号隔开">
+                </div>
+                <span class="btn btn-warning" th:text="${error}" th:if="${error != null}"></span>
+                <button type="submit" class="btn btn-success btn-publish">提交问题</button>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h3>发起问题指南</h3>
+            问题标题：不超过25个字br <br>
+            问题补充：补充问题的相关内容，不超过25字 <br>
+            添加标签：选择或创建合适的标签，不超过10字 <br>
+        </div>
+    </div>
+</div>
 </body>
 </html>

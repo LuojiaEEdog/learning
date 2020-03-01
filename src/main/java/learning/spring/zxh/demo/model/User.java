@@ -5,8 +5,8 @@ public class User {
     private String name;
     private String accountId;
     private String token;
-    private long gmtCreate;
-    private long gmtModified;
+    private Long gmtCreate;
+    private Long gmtModified;
 
     public Integer getId() {
         return id;
