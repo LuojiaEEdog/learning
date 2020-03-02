@@ -35,9 +35,9 @@ public class PublishController {
             HttpServletRequest request,
             Model model //通过创建model对象将数据回传到网页
     ) {
-        model.addAttribute("title",title);
-        model.addAttribute("content",content);
-        model.addAttribute("tag",tag);
+        model.addAttribute("title", title);
+        model.addAttribute("content", content);
+        model.addAttribute("tag", tag);
         //检测问题是否合法
         if (title == null || title == "") {
             model.addAttribute("error", "标题不能为空！");
@@ -54,7 +54,7 @@ public class PublishController {
         //检测是否登录
         User user = null;
         Cookie[] cookies = request.getCookies();
-        if (cookies != null) {//cookies不为空
+        if (cookies != null && cookies.length != 0) {//cookies不为空
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals("token")) {//根据key找到自定义的cookie
                     String token = cookie.getValue();//获得cookie的value
@@ -65,7 +65,7 @@ public class PublishController {
                     break;
                 }
             }
-            if (user == null) {
+            if (user == null || cookies.length != 0) {
                 model.addAttribute("error", "用户未登录");
                 return "publish";
             }

@@ -12,6 +12,7 @@
 ### Tools  
 [GIT](https://git-scm.com/)  
 [flyway database share](https://flywaydb.org/getstarted/firststeps/maven)  
+[lombok](https://projectlombok.org/setup/maven)  
 
 ### Git fundamental operation  
 1. git add .  
