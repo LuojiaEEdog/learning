@@ -16,4 +16,7 @@ public interface UserMapper {
     @Select("select * from user where token = #{token}")
     //使用@Param注解将对非对象的基本数据类型提取后，放入对应的#{}中进行替代
     User findByToken(@Param("token") String token);
+
+    @Select("select * from user where id = #{id}")
+    User findById(@Param("id") Integer id);
 }
